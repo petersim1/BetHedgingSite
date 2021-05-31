@@ -1,0 +1,115 @@
+body {
+    background-color: black;
+    color: white;
+}
+
+input {
+    margin: 2%;
+}
+
+input:hover {
+    border-color: aqua;
+}
+
+input:focus {
+    border-color: aqua;
+    outline: aqua;
+    outline-width: 5px;
+}
+
+#wrapper {
+    display: flex;
+}
+
+#main {
+    margin: 5% auto;
+    width: 50%;
+    text-align: center;
+}
+
+#describe {
+    text-align: center;
+    padding: 2%;
+    margin: 5% 0;
+}
+
+#describe p {
+    width: 60%;
+    margin: 0 auto;
+    font-style: italic;
+}
+
+button[id='get-res'] {
+    background-color: black;
+    border: none;
+}
+
+#res {
+    display: none;
+    margin: 10% auto;
+    width: 100%;
+    text-align: center;
+}
+
+#result {
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+#winnings {
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+#note {
+    font-style: italic;
+    font-size: smaller;
+}
+
+
+/* Modal pop-up */
+
+#open-modal {
+    float: right;
+    background-color: white;
+    border-radius: 50px;
+    border-style: none;
+}
+
+.modal {
+    height: calc(80% - 1rem);
+    overflow: hidden;
+    overflow-y: scroll;
+    top: 10%;
+    color: black;
+}
+
+.container-modal {
+    background-color: white;
+    border-radius: 10px;
+    width: 50%;
+    margin: 20px auto;
+    padding: 4%;
+}
+
+li span {
+    font-style: italic;
+    font-size: .9rem;
+}
+
+.get-example {
+    cursor: pointer;
+    font-style: normal;
+    text-decoration: underline;
+    color: black;
+}
+
+.scenario {
+    display: none;
+    margin: 2% auto;
+    position: relative;
+    left: -50px;
+    text-align: center;
+    font-size: smaller;
+    font-style: italic;
+}

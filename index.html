@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+  <link rel="stylesheet" href="css/styles.css">
+
+  <!-- <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png"> -->
+
+  <title>Bet Hedge</title>
+
+</head>
+
+<body>
+
+    <div id='main'>
+        <div id='describe'>
+            <button type="submit" id='open-modal'>?</button>
+            <h1>Get your optimal hedge amount</h1>
+            <p>This is based on a closed form solution, which optimizes your payout for either possible outcome</p>
+            <p style="font-size: 12px;">Basically... just hope that both teams have fun...</p>
+        </div>
+
+        <form id="getRes" action="" onsubmit="return false">
+            <input type="number" step='.01' placeholder="Initial Wager" name="init-wager" id='init-wager' required autofocus>
+            <input type="number" step='.01' placeholder="Initial Profit" name='init-profit' id='init-profit' required>
+            <input type="number" step="1" placeholder="Hedge Odds" name="hedge-odds" id='hedge-odds' required>
+            <!-- <button type="submit" class="btn btn-light">Go!</button> -->
+            <button type="submit" id='get-res'><span style="font-size: 3rem;">🥧</span></button>
+        </form>
+        <div id='res'>
+            <h4>Your optimal strategy is to hedge $<span id="result"></span></h4>
+            <h4>This would guarantee you $<span id='winnings'></span> in either outcome</h4>
+            <h6 id='note'></h6>
+        </div>
+    </div>
+
+    <div class='modal'>
+        <div class='container-modal'>
+            <h6>This site takes in 3 fields:</h6>
+            <ul>
+                <li>Initial Wager - <span>amount you originally placed on your bet</span></li>
+                <li>Initial Profit - <span>amount you would win off your initial wager</span></li>
+                <li>Hedge Odds - <span>American odds (ie +200 , -120) of the opposing bet</span></li>
+            </ul>
+            <p>This assumes a zero-sum outcome. This means that either your original wager, 
+                OR the opposing must occur</p>
+            <p>Further, hedging will reduce your potential winnings, but ensure a profit 
+                (unless the bet you are hedging has terrible odds)</p>
+
+            <hr>
+
+            <h6>Possible scenarios where this is of use:</h6>
+            <ol>
+                <li>
+                    You placed a parlay, and all legs have hit except the last one. 
+                    You panic and want to ensure yourself a win, so you hedge the 
+                    final outcome. <span class='get-example'>Get example</span>
+                </li>
+                <div class='scenario'>
+                    <p>
+                        Let's say you took a 5 team parlay. The first 4 have hit. You have team "A" winning in 
+                        the last leg of your parlay, but instead of "riding it out", you decide that you want to 
+                        ensure yourself a profit. What you'd do is take team "A" to lose.
+                    </p>
+                </div>
+                <li>
+                    You placed a wager at the beginning of the game, and now want to use Live Odds to hedge 
+                    the outcome <span class='get-example'>Get example</span>
+                </li>
+                <div class='scenario'>
+                    <p>
+                        Let's say you took team "A" to win before a game started, 
+                        they are now winning, so the odds of them winning becomes more expensive, 
+                        so you hedge by taking team "A" to lose, in the case they lose their lead.
+                    </p>
+                </div>
+                <li>
+                    You placed a future bet on a team to win the championship before the 
+                    season started. Now they are in the championship game and you 
+                    want to hedge the outcome. <span class='get-example'>Get example</span>
+                </li>
+                <div class='scenario'>
+                    <p>
+                        Let's say you took team "A" to win the championship early in the season 
+                        (or took some other future bet, such as having more than a certain number of wins), 
+                        which typically will have pretty poor odds. Now team "A" is in the championship 
+                        (or has a higher likelihood of hitting your future bet), so you hedge the outcome by 
+                        taking the opposite bet.
+                    </p>
+                </ul>
+            </ol>
+        </div>
+    </div>    
+
+    <script rel='jQuery' src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="index.js"></script>
+
+</body>
