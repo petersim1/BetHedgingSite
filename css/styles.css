@@ -113,3 +113,14 @@ li span {
     font-size: smaller;
     font-style: italic;
 }
+
+/* Footer */
+
+footer {
+    text-align: center;
+    position: fixed;
+    bottom: 0;
+    margin: 2% auto;
+    width: 100%;
+    font-size: .8rem;
+}

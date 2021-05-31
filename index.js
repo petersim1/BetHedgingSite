@@ -1,6 +1,7 @@
 $('#open-modal').click(function() {
     $('.modal').show()
     $('#main').css({opacity:'0.2'})
+    $('footer').hide()
 })
 
 window.onclick = function(event) {
@@ -9,6 +10,7 @@ window.onclick = function(event) {
         if (!event.target.closest('.container-modal')) {
             $(".modal").hide();
             $('#main').css({opacity:'1'})
+            $('footer').show()
         }
 
     }
