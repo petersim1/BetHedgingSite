@@ -29,10 +29,11 @@
         </div>
 
         <form id="getRes" action="" onsubmit="return false">
-            <input type="number" step='.01' placeholder="Initial Wager" name="init-wager" id='init-wager' required autofocus>
-            <input type="number" step='.01' placeholder="Initial Profit" name='init-profit' id='init-profit' required>
-            <input type="number" step="1" placeholder="Hedge Odds" name="hedge-odds" id='hedge-odds' required>
-            <!-- <button type="submit" class="btn btn-light">Go!</button> -->
+            <div class='form-inputs'>
+                <input type="number" step='.01' placeholder="Initial Wager" name="init-wager" id='init-wager' required autofocus>
+                <input type="number" step='.01' placeholder="Initial Profit" name='init-profit' id='init-profit' required>
+                <input type="number" step="1" placeholder="Hedge Odds" name="hedge-odds" id='hedge-odds' required>
+            </div>
             <button type="submit" id='get-res'><span style="font-size: 3rem;">🥧</span></button>
         </form>
         <div id='res'>
