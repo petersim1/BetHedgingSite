@@ -23,9 +23,9 @@
     <div id='main'>
         <div id='describe'>
             <button type="submit" id='open-modal'>?</button>
-            <h1>Get your optimal hedge amount</h1>
-            <p>This is based on a closed form solution, which optimizes your payout for either possible outcome</p>
-            <p style="font-size: 12px;">Basically... just hope that both teams have fun...</p>
+            <h1>Hedge Calculator</h1>
+            <p>Optimize your payout, regardless of the outcome</p>
+            <p style="font-size: 12px;">Take your profits while you can...</p>
         </div>
 
         <form id="getRes" action="" onsubmit="return false">
@@ -40,6 +40,29 @@
             <h4>Your optimal strategy is to hedge $<span id="result"></span></h4>
             <h4>This would guarantee you $<span id='winnings'></span> in either outcome</h4>
             <h6 id='note'></h6>
+            <hr>
+            <i>Play around with the slider to see potential profits for a given hedge wager...</i>
+
+            <div id='slider'>
+                <input type='range' class='form-range' step=.01 oninput="updateVal(this.value)">
+                <div id='range-tooltip'>
+                    <p>Hedge Wager: <b>$</b><b id='hedgeWager'></b></p>
+                    <p>Net Profit if Hedge Wins: <b>$</b><b id='hedgeWinsp'></b></p>
+                    <p>Net Profit if Hedge Loses: <b>$</b><b id='hedgeLosesp'></b></p>
+                </div>
+            </div>
+
+            <!-- <div id='viz'>
+                <svg 
+                    height=350
+                    preserveAspectRatio="xMidYMid meet"
+                ></svg>
+                <div id="tooltip"></div>
+            </div>
+            <div id='table'>
+                <table>
+                </table>
+            </div> -->
         </div>
     </div>
 
@@ -53,7 +76,7 @@
             </ul>
             <p>This assumes a zero-sum outcome. This means that either your original wager, 
                 OR the opposing must occur</p>
-            <p>Further, hedging will reduce your potential winnings, but ensure a profit 
+            <p>Further, hedging will reduce your potential winnings, but can ensure profit 
                 (unless the bet you are hedging has terrible odds)</p>
 
             <hr>
@@ -101,6 +124,7 @@
         </div>
     </div>    
 
+    <script rel='d3.js' src="https://d3js.org/d3.v6.min.js"></script>
     <script rel='jQuery' src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="index.js"></script>
 

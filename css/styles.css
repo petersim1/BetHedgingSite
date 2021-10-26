@@ -23,6 +23,13 @@ input:focus {
     text-align: center;
 }
 
+@media (max-width: 786px) { 
+    #main {
+        margin: 3%;
+        width: 90%;        
+    }
+}
+
 #describe {
     text-align: center;
     padding: 2%;
@@ -54,7 +61,7 @@ button[id='get-res'] {
 
 #res {
     display: none;
-    margin: 10% auto 20%;
+    margin: 5% auto 0%;
     width: 100%;
     text-align: center;
 }
@@ -69,9 +76,72 @@ button[id='get-res'] {
     text-decoration: underline;
 }
 
+#slider {
+    width: 60%;
+    margin:auto;
+    display: none;
+}
+
+@media (max-width: 786px) { 
+    #slider {
+       width: 90%;        
+    }
+}
+
+#range-tooltip {
+    width: fit-content ;
+    padding: 0% 2%;
+    border-radius: 0.5rem;
+    border: solid grey 1px;
+    margin: 0 auto 2%;
+}
+
+#range-tooltip p {
+    margin-top: .5rem;
+    margin-bottom: .5rem;
+    text-align: right;
+}
+
+p b {
+    font-size: 1.5rem;
+}
+
 #note {
+    margin-bottom: 1rem;
     font-style: italic;
     font-size: smaller;
+}
+
+#viz {
+    width: 80%;
+    margin:auto;
+}
+
+
+table {
+    margin: auto;
+    text-align: center;
+}
+
+tr {
+    font-size: .8rem;
+}
+
+@media (max-width: 1024px) { 
+    #viz {
+       width: 80%;        
+    }
+}
+
+@media (max-width: 768px) { 
+    #viz {
+       width: 100%;        
+    }
+}
+
+svg {
+    width: 100%;
+    margin: auto;
 }
 
 
