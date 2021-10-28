@@ -78,7 +78,7 @@ button[id='get-res'] {
 
 #slider {
     width: 60%;
-    margin:auto;
+    margin: 0 auto 3rem;
     display: none;
 }
 
@@ -93,7 +93,7 @@ button[id='get-res'] {
     padding: 0% 2%;
     border-radius: 0.5rem;
     border: solid grey 1px;
-    margin: 0 auto 2%;
+    margin: 2rem auto 0;
 }
 
 #range-tooltip p {

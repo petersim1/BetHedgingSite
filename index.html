@@ -37,19 +37,20 @@
             <button type="submit" id='get-res'><span style="font-size: 3rem;">🥧</span></button>
         </form>
         <div id='res'>
-            <h4>Your optimal strategy is to hedge $<span id="result"></span></h4>
-            <h4>This would guarantee you $<span id='winnings'></span> in either outcome</h4>
-            <h6 id='note'></h6>
+            <div>
+                <h4>Your optimal strategy is to hedge $<span id="result"></span></h4>
+                <h4>This would guarantee you $<span id='winnings'></span> in either outcome</h4>
+                <h6 id='note'></h6>
+            </div>
             <hr>
-            <i>Play around with the slider to see potential profits for a given hedge wager...</i>
-
             <div id='slider'>
-                <input type='range' class='form-range' step=.01 oninput="updateVal(this.value)">
+                <i>Play around with the slider to see potential profits for a given hedge wager...</i>
                 <div id='range-tooltip'>
                     <p>Hedge Wager: <b>$</b><b id='hedgeWager'></b></p>
                     <p>Net Profit if Hedge Wins: <b>$</b><b id='hedgeWinsp'></b></p>
                     <p>Net Profit if Hedge Loses: <b>$</b><b id='hedgeLosesp'></b></p>
                 </div>
+                <input type='range' class='form-range' step=.01 value="this.value" oninput="updateVal(this.value)" onchange="updateVal(this.value)">
             </div>
 
             <!-- <div id='viz'>

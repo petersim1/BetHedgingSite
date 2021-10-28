@@ -26,6 +26,7 @@ $('.get-example').click(function() {
 
 
 $("#getRes").submit(function() {
+
     var formDataObj = {}
 
     $(this).serializeArray().forEach(function(element) {
@@ -35,6 +36,8 @@ $("#getRes").submit(function() {
     const initWager = formDataObj['init-wager']
     const initProfit = formDataObj['init-profit']
     const hedgeOdds = formDataObj['hedge-odds']
+
+    console.log(formDataObj)
 
     globalThis.initWager = initWager;
     globalThis.initProfit = initProfit;
@@ -59,7 +62,6 @@ $("#getRes").submit(function() {
 
     // genPlot(formDataObj['init-wager'],formDataObj['init-profit'],formDataObj['hedge-odds'])
     // genTable(formDataObj['init-wager'],formDataObj['init-profit'],formDataObj['hedge-odds'])
-
     $('input[type=range]').attr('value',optHedgeAmount)
     $('input[type=range]').attr('min',0)
     $('input[type=range]').attr('max',initProfit)
@@ -67,13 +69,15 @@ $("#getRes").submit(function() {
     $('#hedgeWager').text(optHedgeAmount.toFixed(2))
     $('#hedgeWinsp').text((payout(hedgeOdds,$('input[type=range]').attr('value'))-initWager).toFixed(2))
     $('#hedgeLosesp').text((initProfit-$('input[type=range]').attr('value')).toFixed(2))
-
+     
 })
 
+
 const updateVal = (val) => {
-    document.querySelector('#hedgeWager').innerHTML = Number(val).toFixed(2)
-    document.querySelector('#hedgeWinsp').innerHTML = Number(payout(hedgeOdds,val)-initWager).toFixed(2)
-    document.querySelector('#hedgeLosesp').innerHTML = Number(initProfit - val).toFixed(2)
+    $('#hedgeWager').text(Number(val).toFixed(2))
+    $('#hedgeWinsp').text(Number(payout(hedgeOdds,val)-initWager).toFixed(2))
+    $('#hedgeLosesp').text(Number(initProfit - val).toFixed(2))
+    $('input[type=range]').attr('value',val)
 }
 
 // const genData = (initWager,initProfit,hedgeOdds) => {
